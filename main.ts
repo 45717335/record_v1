@@ -1,13 +1,23 @@
 input.onButtonPressed(Button.A, function () {
-    i1 = i1 + 1
+    i1 = i1 + i2
     shownum2(noice_list[i1], i1)
 })
-input.onButtonPressed(Button.B, function () {
-    for (let index = 0; index < 20; index++) {
-        noice_list[i1] = i1
-        i1 = i1 + 1
+input.onButtonPressed(Button.AB, function () {
+    if (i2 == 1) {
+        i2 = 10
+        startbit.startbit_setPixelRGB(StartbitLights.Light2, StartbitRGBColors.Green)
+    } else if (i2 == 10) {
+        i2 = 100
+        startbit.startbit_setPixelRGB(StartbitLights.Light2, StartbitRGBColors.Red)
+    } else {
+        i2 = 1
+        startbit.startbit_clearLight()
     }
-    i1 = i1 - 20
+    startbit.startbit_showLight()
+})
+input.onButtonPressed(Button.B, function () {
+    i1 = i1 - i2
+    shownum2(noice_list[i1], i1)
 })
 function shownum2 (数字: number, 数字2: number) {
     basic.clearScreen()
@@ -91,11 +101,13 @@ function shownum2 (数字: number, 数字2: number) {
     basic.pause(500)
 }
 let noice_list: number[] = []
+let i2 = 0
 let i1 = 0
 startbit.startbit_Init()
 i1 = 1
+i2 = 1
 basic.showArrow(ArrowNames.East)
-for (let index = 0; index < 40; index++) {
+for (let index = 0; index < 10000; index++) {
     noice_list.push(startbit.startbit_getSoundVolume())
 }
 basic.showIcon(IconNames.Yes)
