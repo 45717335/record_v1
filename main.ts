@@ -107,7 +107,8 @@ startbit.startbit_Init()
 i1 = 1
 i2 = 1
 basic.showArrow(ArrowNames.East)
-for (let index = 0; index < 10000; index++) {
-    noice_list.push(startbit.startbit_getSoundVolume())
-}
-basic.showIcon(IconNames.Yes)
+noice_list.push(startbit.startbit_getSoundVolume())
+noice_list.push(startbit.startbit_getSoundVolume())
+noice_list.push(startbit.startbit_getSoundVolume())
+noice_list.push(startbit.startbit_getSoundVolume())
+noice_list.push(startbit.startbit_getSoundVolume())
