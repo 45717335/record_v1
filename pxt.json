@@ -1,0 +1,21 @@
+{
+    "name": "record_V1",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "Microbit_Voice2": "github:45717335/microbit_voice3#master"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
